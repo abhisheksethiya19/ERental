@@ -1,0 +1,111 @@
+﻿@*@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+<div>
+    <div class="LR" style="color: black;">
+                  @Html.ActionLink("Login","Login","Authenticate")
+                </div>
+
+                 <div class="LR">
+                 @Html.ActionLink("Sign Up","Register","Authenticate")
+                  </div>
+</div>*@
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<style>
+    .display-4{
+    font-family:Fantasy;
+    text-align:center;
+    padding-top:0px;
+    }
+    h4{
+    font-family: "italic","Lucida Console", "Courier New";
+    font-size:40px;
+    }
+
+    h5{
+    font-weight:bold;
+    }
+</style>
+
+<h1 class="display-4">WelCome !</h1>
+        <!--Grid column-->
+<div class="row">
+    
+    <!--Grid column-->
+    <div class="col-md-6 mb-4">
+    
+        <h4 class="card-title">Order Now</h4>
+
+        <div class="card">
+            
+            <div class="card-body">
+               
+              <h5 class="card-title">Packages</h5>
+              <h5 class="card-title">Furniture</h5>
+              <h5 class="card-title">Appliances</h5>
+              <h5 class="card-title">Electronics</h5>
+              <h5 class="card-title">Fitness</h5>
+             <br />
+              @*<a class="btn btn-primary stretched-link" asp-area="" asp-controller="Product" asp-action="CommonProductList">Go to view all products</a>*@
+            </div>
+          </div>
+
+        @*<div>
+                 <div class="LR" style="color: black;">
+                  @Html.ActionLink("Login","Login","Authenticate")
+                </div>
+
+                 <div class="LR">
+                 @Html.ActionLink("Sign Up","Register","Authenticate")
+                 </div>
+        </div>*@
+    
+    </div>
+    <!--Grid column-->
+
+<!------------------------------------------------------------------------------------------------>
+
+<!--Grid column-->
+ <div class="col-md-6 mb-4">
+  <!-- Card -->
+  <div class="card">
+  
+      <!-- Card image -->
+      <div class="view overlay">
+        <img class="card-img-top" src="https://mdbootstrap.com/img/Mockups/Lightbox/Thumbnail/img%20(67).jpg" alt="Card image cap">
+          <div class="mask rgba-white-slight"></div>
+        </a>
+      </div>
+    
+      <!-- Card content -->
+      <div class="card-body">
+        <!-- Title -->
+        <!-- Text -->
+             <div class="text-center">
+              <I>
+                   <b>
+                   <p>Order now for free delivery to most areas around India.</br>
+                   View Buying Guides. Gift Vouchers. Next Day Delivery Option.<br>
+                   Removal & Recycling* View Blog. Multiple Payment Options.<br>
+                   Free Delivery Available.<br></p>
+                   </b>
+              </I>
+              <!-- Button -->
+               <div class="card-body">
+                <a class="btn btn-primary stretched-link" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                </div>
+            </div>
+     </div>
+ </div>
+  <!-- Card -->
+</div>

@@ -1,0 +1,116 @@
+﻿@model IEnumerable<ERental.Entities.Product>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<style>
+    .color{
+          background-color:#C0C0C0;
+          color: black;
+          border: 2px solid green;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          padding: 8px 12px;
+          font-weight: bold;
+    }
+    .create{
+          background-color:#2F4F4F;
+          color: black;
+          border: 2px solid green;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          padding: 8px 12px;
+          color:white;
+          font-weight: bold;
+    }
+    .delete{
+          background-color:red;
+          border: 2px solid green;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          padding: 8px 12px;
+          color:white;
+          font-weight: bold;
+    
+    }
+</style>
+
+
+<h1>List of all products </h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PricePerMonth)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.InitialDeposit)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FreeDelivery)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsAvailable)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DeliveryBy)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Vendor)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PricePerMonth)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.InitialDeposit)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FreeDelivery)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsAvailable)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DeliveryBy)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VendorId)
+            </td>
+            <td>
+                @*<a asp-action="Edit" asp-route-id="@item.ProductId">Edit</a> |*@
+                <a class="color" asp-action="Details" asp-route-id="@item.ProductId">Details</a>|
+                <a class="color" asp-action="Rent" asp-route-id="@item.ProductId">Rent</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

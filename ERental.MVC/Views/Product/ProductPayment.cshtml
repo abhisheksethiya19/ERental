@@ -1,0 +1,28 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@using(Html.BeginForm("ProductPayment", "Product"))
+{ 
+<div id="divintersetdetails">
+    <ol>
+        <li>
+            @Html.Label("Amount")
+            @Html.TextBox("txtAmount")
+        </li>
+        <li>
+            @Html.Label("Rate")
+            @Html.TextBox("txtRate")
+        </li>
+        <li>
+            @Html.Label("Year")
+            @Html.TextBox("txtyear")
+        </li>
+    </ol>
+    <button>Buy on tent</button>
+
+</div>
+
+}

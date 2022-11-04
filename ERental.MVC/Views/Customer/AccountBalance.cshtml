@@ -1,0 +1,131 @@
+﻿@model ERental.Entities.Customer
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".form-group").hide()
+        }
+    );
+    </script>
+
+<h1>Add Balance</h1>
+
+<h4>Customer</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="EditBalance">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="CustomerId" />
+            <div class="form-group">
+                <label asp-for="UserName" class="control-label"></label>
+                <input asp-for="UserName" class="form-control" />
+                <span asp-validation-for="UserName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FirstName" class="control-label"></label>
+                <input asp-for="FirstName" class="form-control" />
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LastName" class="control-label"></label>
+                <input asp-for="LastName" class="form-control" />
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StateId" class="control-label"></label>
+                <select asp-for="StateId" class="form-control" asp-items="ViewBag.StateId"></select>
+                <span asp-validation-for="StateId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CityId" class="control-label"></label>
+                <select asp-for="CityId" class="form-control" asp-items="ViewBag.CityId"></select>
+                <span asp-validation-for="CityId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PinCode" class="control-label"></label>
+                <input asp-for="PinCode" class="form-control" />
+                <span asp-validation-for="PinCode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PhoneNo" class="control-label"></label>
+                <input asp-for="PhoneNo" class="form-control" />
+                <span asp-validation-for="PhoneNo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EmailId" class="control-label"></label>
+                <input asp-for="EmailId" class="form-control" />
+                <span asp-validation-for="EmailId" class="text-danger"></span>
+            </div>
+            <div class="form-groupt">
+                <label asp-for="AccountBalance" class="control-label"></label>
+                <input readonly asp-for="AccountBalance" class="form-control" />
+                <span asp-validation-for="AccountBalance" class="text-danger"></span>
+            </div>
+            <br />
+            <div>
+                @Html.Label("Add amount")
+                <br />
+                @Html.TextBox("bAmount")
+            </div>
+            <div>
+                @Html.Label("Enter card number")
+                <br />
+                @Html.TextBox("cardN")
+            </div>
+            <div>
+                @Html.Label("Enter card CVV")
+                <br />
+                @Html.TextBox("cvv")
+            </div>
+            <div>
+
+            </div>
+            <div class="form-groupt">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+            
+@*            <li>
+            @Html.Label("Add amount")
+            @Html.TextBox("bAmount")
+        </li>*@
+        </form>
+    </div>
+</div>
+
+        
+
+@*@using(Html.BeginForm("ProductPayment", "Product"))
+{ 
+<div id="divintersetdetails">
+    <ol>
+        <li>
+            @Html.Label("number of month")
+            @Html.TextBox("noMonth")
+        </li>
+        <li>
+            @Html.Label("number of Product")
+            @Html.TextBox("noPro")
+        </li>
+        <h2>Total Amount</h2>
+        <h1>@ViewData["Item"]</h1>
+
+        <h2>Todays day</h2>
+        <h2>@weekday</h2>
+    </ol>
+    <button>calculate</button>
+
+</div>
+}*@
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

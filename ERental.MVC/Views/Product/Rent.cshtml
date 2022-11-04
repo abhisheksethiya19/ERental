@@ -1,0 +1,131 @@
+﻿@model ERental.Entities.Product
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Order now</h1>
+
+@{
+    var Greeting = "Welcome to Madrid";
+    var weekday = DateTime.Now.DayOfWeek;
+}
+
+<h4>Product</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Order">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="ProductId" />
+            <div class="form-group">
+                <label asp-for="ProductName" class="control-label"></label>
+                <input readonly asp-for="ProductName" class="form-control" />
+                <span asp-validation-for="ProductName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProductType" class="control-label"></label>
+                <input readonly asp-for="ProductType" class="form-control" />
+                <span asp-validation-for="ProductType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <input readonly asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PricePerMonth" class="control-label"></label>
+                <input readonly asp-for="PricePerMonth" class="form-control" />
+                <span asp-validation-for="PricePerMonth" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="InitialDeposit" class="control-label"></label>
+                <input readonly asp-for="InitialDeposit" class="form-control" />
+                <span asp-validation-for="InitialDeposit" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FreeDelivery" class="control-label"></label>
+                <input readonly asp-for="FreeDelivery" class="form-control" />
+                <span asp-validation-for="FreeDelivery" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IsAvailable" class="control-label"></label>
+                <input readonly asp-for="IsAvailable" class="form-control" />
+                <span asp-validation-for="IsAvailable" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DeliveryBy" class="control-label"></label>
+                <input readonly asp-for="DeliveryBy" class="form-control" />
+                <span asp-validation-for="DeliveryBy" class="text-danger"></span>
+            </div>
+
+            <div>
+                 <h2>Total Amount</h2>
+                 <h1>@ViewData["Item"]</h1>
+            </div>
+            <div>
+                @Html.Label("Enter card number")
+                <br />
+                @Html.TextBox("cardN")
+            </div>
+            <div>
+                @Html.Label("Enter card CVV")
+                <br />
+                @Html.TextBox("cvv")
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Order" class="btn btn-primary" />
+            </div>
+        </form>
+
+
+
+    </div>
+</div>
+
+
+
+@*@using(Html.BeginForm("ProductPayment", "Product"))
+{ 
+<div id="divintersetdetails">
+    <ol>
+        <li>
+            @Html.Label("number of month")
+            @Html.TextBox("noMonth")
+        </li>
+        <li>
+            @Html.Label("number of Product")
+            @Html.TextBox("noPro")
+        </li>
+        <h2>Total Amount</h2>
+        <h1>@ViewData["Item"]</h1>
+
+        <br>
+
+        <h2>Todays day</h2>
+        <h2>@weekday</h2>
+    </ol>
+    <button>calculate</button>
+
+</div>
+}*@
+
+
+@*
+<div>
+    <a asp-action="ProductPayment">Back to List</a>
+
+
+    @*<button asp-action="CustomerProductList" class="GFG">
+            Click Here
+    </button>*@
+
+@*<div>
+    <a asp-action="CustomerProductList">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+*@

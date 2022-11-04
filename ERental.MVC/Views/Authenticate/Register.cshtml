@@ -1,0 +1,51 @@
+﻿@model ERental.WebAPI.Authentication.RegisterModel
+
+@{
+    ViewData["Title"] = "Register";
+}
+
+
+<h3>Register</h3>
+<div class="row">
+    <div class="col-md-4">
+        <section>
+            <form asp-action="Register">
+                <div asp-validation-summary="All" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="Username"></label>
+                    <input asp-for="Username" class="form-control" />
+                    <span asp-validation-for="Username" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Email"></label>
+                    <input asp-for="Email" class="form-control" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Password"></label>
+                    <input asp-for="Password" class="form-control" type="password"/>
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                      <label asp-for="Role"></label>
+                      <br />
+                      @*<input type="radio" id="admin" name="Role" value="Admin">
+                      <label for="Role">Admin</label>*@
+                      <input type="radio" id="customer" name="Role" value="Customer">
+                      <label for="Role">Customer</label>
+                      <input type="radio" id="vendor" name="Role" value="Vendor">
+                      <label for="Role">Vendor</label>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary">Register</button>
+                </div>
+
+            </form>
+        </section>
+    </div>
+   
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

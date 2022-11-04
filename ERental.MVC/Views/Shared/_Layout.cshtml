@@ -1,0 +1,256 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>ERental System</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    /* Remove the navbar's default margin-bottom and rounded borders */ 
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+    
+    /* Add a gray background color and some padding to the footer */
+    footer {
+      background-color: #f2f2f2;
+      padding: 25px;
+    }
+    .navbar-brand{
+    font-family:Papyrus;
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" >E-Rental System</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        @*<li class="active"><a href="#">Home</a></li>*@
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                        </li>
+                       @* <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Product" asp-action="Index">ProductIndex</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Vendor" asp-action="Index">VendorIndex</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Customer" asp-action="Index">CustomerIndex</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="HomeAdmin">HomeAdmin</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="HomeVendor">HomeVendor</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="HomeCustomer">HomeCustomer</a>
+                        </li>*@
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a class="nav-link text-dark" asp-area="" asp-controller="Authenticate" asp-action="Login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      </ul>
+       <ul class="nav navbar-nav navbar-right">
+        <li><a class="nav-link text-dark" asp-area="" asp-controller="Authenticate" asp-action="Register"><span class="glyphicon glyphicon-log-in"></span> Register</a></li>
+      </ul>
+       <ul class="nav navbar-nav navbar-right">
+        <li><a class="nav-link text-dark" asp-area="" asp-controller="Authenticate" asp-action="Logout"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="jumbotron">
+  <div class="container text-center">
+    <h1>Online Rental System</h1>      
+   
+  </div>
+</div>
+
+</div>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    @* <h3>Some of Appliances</h3><br>
+  <div class="row">
+    <div class="col-sm-3">
+      <p>Some text..</p>
+      <img src="https://www.google.com/search?q=photo+of+treadmill&sxsrf=ALiCzsa8j-NQ_cq_vDUOv4UyMUpqCf_puw:1658590098903&tbm=isch&source=iu&ictx=1&vet=1&fir=-HLPi7VFa3voxM%252CJAmdRM-NlafiZM%252C_%253BM8ou6HKxqAbGlM%252CJAmdRM-NlafiZM%252C_%253B0w-IX-ezhBk5-M%252CJAmdRM-NlafiZM%252C_%253BBmnLRARve0yzDM%252C3rV6exSlxnV3HM%252C_%253Bt8NhAvR1yrTpAM%252CJAmdRM-NlafiZM%252C_%253Boi7YxauwBbzV5M%252CJAmdRM-NlafiZM%252C_%253BTAEBMUzBM90zLM%252CUKmFjKPGH4poaM%252C_%253BDbioHE-_NpbdjM%252CWxC-557Dc_oJzM%252C_%253Bw_esSv2BtQwmMM%252Cmh53_Of88DT7KM%252C_%253BYgmPu8UdR5ZuOM%252CJAmdRM-NlafiZM%252C_%253BTsI0A5JnkOx5SM%252CBNBIhStqLOlK1M%252C_%253BtKxrDWChl1opWM%252Cmh53_Of88DT7KM%252C_&usg=AI4_-kQoe7YDCoFOJLAzBWx05LiXzk7FfA&sa=X&ved=2ahUKEwiS9bDNqY_5AhVGhlYBHdyyAAwQ9QF6BAgNEAE#imgrc=M8ou6HKxqAbGlM" class="img-responsive" style="width:100%" alt="Image">
+    </div>
+    <div class="col-sm-3"> 
+      <p>Some text..</p>
+      <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
+    </div>
+    <div class="col-sm-3"> 
+      <p>Some text..</p>
+      <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
+    </div>
+    <div class="col-sm-3">
+      <p>Some text..</p>
+      <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
+    </div>
+  </div>
+</div><br>
+*@
+<br>
+<footer class="container-fluid text-center">
+    <nav aria-label="Page navigation example">
+  <ul class="pagination justify-content-center">
+    @*<li class="page-item disabled">
+      <a class="page-link" href="#" tabindex="-1">Previous</a>
+    </li>
+    <li class="page-item"><a class="page-link" href="#">1</a></li>
+    <li class="page-item"><a class="page-link" href="#">2</a></li>
+    <li class="page-item"><a class="page-link" href="#">3</a></li>
+    <li class="page-item">
+      <a class="page-link" href="#">Next</a>
+    </li>*@
+  </ul>
+</nav>
+  <marquee>  
+    <b>Order now for free delivery to most areas around Austra
+       View Buying Guides. Gift Vouchers. Next Day Delivery Option.
+       Removal & Recycling* View Blog. Multiple Payment Options.
+       Free Delivery Available.Order now for free delivery to most areas around Austra
+       View Buying Guides. Gift Vouchers. Next Day Delivery Option.
+       Removal & Recycling* View Blog. Multiple Payment Options.
+       Free Delivery Available.            Order now for free delivery to most areas around Austra
+       View Buying Guides. Gift Vouchers. Next Day Delivery Option.
+       Removal & Recycling* View Blog. Multiple Payment Options.
+       Free Delivery Available.Order now for free delivery to most areas around Austra
+       View Buying Guides. Gift Vouchers. Next Day Delivery Option.
+       Removal & Recycling* View Blog. Multiple Payment Options.
+       Free Delivery Available.            Order now for free delivery to most areas around Austra
+       View Buying Guides. Gift Vouchers. Next Day Delivery Option.
+       Removal & Recycling* View Blog. Multiple Payment Options.
+       Free Delivery Available.Order now for free delivery to most areas around Austra
+       View Buying Guides. Gift Vouchers. Next Day Delivery Option.
+       Removal & Recycling* View Blog. Multiple Payment Options.
+       Free Delivery Available.           Order now for free delivery to most areas around Austra
+       View Buying Guides. Gift Vouchers. Next Day Delivery Option.
+       Removal & Recycling* View Blog. Multiple Payment Options.
+       Free Delivery Available.Order now for free delivery to most areas around Austra
+       View Buying Guides. Gift Vouchers. Next Day Delivery Option.
+       Removal & Recycling* View Blog. Multiple Payment Options.
+       Free Delivery Available.            Order now for free delivery to most areas around Austra
+       View Buying Guides. Gift Vouchers. Next Day Delivery Option.
+       Removal & Recycling* View Blog. Multiple Payment Options.
+       Free Delivery Available.Order now for free delivery to most areas around Austra
+       View Buying Guides. Gift Vouchers. Next Day Delivery Option.
+       Removal & Recycling* View Blog. Multiple Payment Options.
+       Free Delivery Available.             Order now for free delivery to most areas around Austra
+       View Buying Guides. Gift Vouchers. Next Day Delivery Option.
+       Removal & Recycling* View Blog. Multiple Payment Options.
+       Free Delivery Available.Order now for free delivery to most areas around Austra
+       View Buying Guides. Gift Vouchers. Next Day Delivery Option.
+       Removal & Recycling* View Blog. Multiple Payment Options.
+       Free Delivery Available.             Order now for free delivery to most areas around Austra
+       View Buying Guides. Gift Vouchers. Next Day Delivery Option.
+       Removal & Recycling* View Blog. Multiple Payment Options.
+       Free Delivery Available.Order now for free delivery to most areas around Austra
+       View Buying Guides. Gift Vouchers. Next Day Delivery Option.
+       Removal & Recycling* View Blog. Multiple Payment Options.
+       Free Delivery Available.             Order now for free delivery to most areas around Austra
+       View Buying Guides. Gift Vouchers. Next Day Delivery Option.
+       Removal & Recycling* View Blog. Multiple Payment Options.
+       Free Delivery Available.Order now for free delivery to most areas around Austra
+       View Buying Guides. Gift Vouchers. Next Day Delivery Option.
+       Removal & Recycling* View Blog. Multiple Payment Options.
+       Free Delivery Available.</b>
+</marquee>  
+</footer>
+@await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
+
+
+
+@*<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - ERental.MVC</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/ERental.MVC.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container-fluid">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">ERental.MVC</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Product" asp-action="Index">ProductIndex</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Vendor" asp-action="Index">VendorIndex</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Customer" asp-action="Index">CustomerIndex</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="HomeAdmin">HomeAdmin</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="HomeVendor">HomeVendor</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="HomeCustomer">HomeCustomer</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2022 - ERental.MVC - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
+*@

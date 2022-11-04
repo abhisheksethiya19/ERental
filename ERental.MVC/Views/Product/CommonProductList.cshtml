@@ -1,0 +1,143 @@
+﻿@model IEnumerable<ERental.Entities.Product>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<style>
+    .color{
+          background-color:#C0C0C0;
+          color: black;
+          border: 2px solid green;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          padding: 8px 12px;
+          font-weight: bold;
+    }
+    .create{
+          background-color:#2F4F4F;
+          color: black;
+          border: 2px solid green;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          padding: 8px 12px;
+          color:white;
+          font-weight: bold;
+    }
+    .delete{
+          background-color:red;
+          border: 2px solid green;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          padding: 8px 12px;
+          color:white;
+          font-weight: bold;
+    
+    }
+</style>
+
+<h1>All products</h1>
+
+<div>
+    <form method="get" asp-action="CommonProductList">
+    <p>
+        <input type="Search" placeholder="Enter Product name" value=@ViewData["index"] name="Name" style="width: 500px;"/>
+        <input type="submit" value="Search" class="btn btn-primary" asp-action="Search" asp-route-name=Name/>
+        <a asp-action="CommonProductList">Get all Products</a>
+    </p>
+</form>
+
+<form method="get" asp-action="CommonProductList">
+    <p>
+        <input type="Search" placeholder="Search by type" value=@ViewData["index"] name="Name" style="width: 500px;"/>
+        <input type="submit" value="Search" class="btn btn-primary" asp-action="SearchByType" asp-route-name=Name/>
+        <a asp-action="CommonProductList">Get all Products</a>
+    </p>
+</form>
+
+<form method="get" asp-action="CommonProductList">
+    <p>
+        <input type="Search" placeholder="Search by price" value=@ViewData["index"] name="price" style="width: 500px;"/>
+        <input type="submit" value="Search" class="btn btn-primary" asp-action="SearchByPrice" asp-route-name=price/>
+        <a asp-action="CommonProductList">Get all Products</a>
+    </p>
+</form>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PricePerMonth)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.InitialDeposit)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FreeDelivery)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsAvailable)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DeliveryBy)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Vendor)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PricePerMonth)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.InitialDeposit)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FreeDelivery)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsAvailable)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DeliveryBy)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Vendor.VendorId)
+            </td>
+            <td>
+                <a class="color" asp-action="Details" asp-route-id="@item.ProductId">Details</a>|
+                <a class="color" asp-action="Rent" asp-route-id="@item.ProductId">Order now</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+<br />
+<a class="btn btn-primary stretched-link" asp-area="" asp-controller="Home" asp-action="HomeCustomer">Go to home page</a>

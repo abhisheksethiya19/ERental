@@ -1,0 +1,92 @@
+﻿<style>
+  img {
+  width: 200px;
+  display: block;
+  float:left;
+}
+.card {
+    width: 60%;
+    height: 200px;
+    content: "";
+  clear: both;
+  display: table;
+  border: 3px solid #C0C0C0;
+  padding: 5px;
+  margin-top: 10px;
+  -moz-box-shadow:    3px 3px 5px 6px #ccc;
+  -webkit-box-shadow: 3px 3px 5px 6px #ccc;
+  box-shadow:
+}
+
+.card1 {
+    width: 60%;
+    height: 200px;
+   top:-325px;
+   margin-left: auto;
+   margin-right: auto;
+    content: "";
+  clear: both;
+  display: table;
+  border: 3px solid #C0C0C0;
+  padding: 5px;
+  -moz-box-shadow:    3px 3px 5px 6px #ccc;
+  -webkit-box-shadow: 3px 3px 5px 6px #ccc;
+  box-shadow:
+}
+
+
+.card2 {
+        width: 60%;
+        height: 200px;
+        float:right;
+        content: "";
+      clear: both;
+      display: table;
+      border: 3px solid #C0C0C0;
+      padding: 5px;
+      -moz-box-shadow:    3px 3px 5px 6px #ccc;
+  -webkit-box-shadow: 3px 3px 5px 6px #ccc;
+  box-shadow:
+}
+
+.card-body{
+  margin-left:330px;
+  margin-top:40px;
+}
+
+p{
+font-weight: bold;
+font-size:25px;
+margin-top:30px;
+margim-left:20px;
+}
+
+</style>
+
+<div class="div"> 
+        <div class="card">
+          <img src="https://cdn0.iconfinder.com/data/icons/cosmo-layout/40/box-512.png" class="card-img-top" alt="...">
+          <p>Click the given Button below to see all Products</p>
+          <div class="card-body">
+            <a class="btn btn-primary stretched-link" asp-area="" asp-controller="Product" asp-action="CommonProductList">Go to view Products</a>
+          </div>
+        </div>
+
+
+        <div class="card1" >
+          <img src="data:image/png;base64,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" class="card-img-top" alt="...">
+          <p>Click the given Button below to see Vendor Details</p>
+          <div class="card-body">
+                <a class="btn btn-primary stretched-link" asp-area="" asp-controller="Vendor" asp-action="CustomerVendorList" >Go to view Vendor</a>
+          </div>
+        </div> 
+    
+        
+        <div class="card2" >
+          <img src="data:image/png;base64,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" class="card-img-top" alt="...">
+          <p>Click the given Button below to see My Details</p>
+          <div class="card-body">
+                <a class="btn btn-primary stretched-link" asp-area="" asp-controller="Customer" asp-action="Index">Go to view My Details</a>
+          </div>
+        </div>
+</div>
